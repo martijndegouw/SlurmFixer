@@ -8,9 +8,9 @@ import pymysql
 import argparse
 import subprocess
 
-DB_CONFIG_FILENAME = '/etc/slurm/slurmdbd.conf'
+DB_CONFIG_FILENAME = '/etc/slurm-llnl/slurmdbd.conf'
 KILL_SCRIPT_FILENAME = '/tmp/SlurmFixer-kill-orphans.sh'
-CLUSTER_NAME = 'hardac'
+CLUSTER_NAME = 'linux'
 # list job IDS for currently running processes without printing a header
 QUEUE_LIST_COMMAND = ['squeue', '-h', '-o', '"%A"']
 NODE_LIST_COMMAND = ['sinfo', '-h', '-N', '-o', '%N']
