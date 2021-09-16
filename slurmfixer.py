@@ -132,9 +132,12 @@ def find_bad():
     db = get_db_connection(DB_CONFIG_FILENAME)
     print_bad_job_line("JOBID", "STARTED", "ACCOUNT", "USERID", "STATE", "JOB NAME")
     for job in find_bad_jobs(db):
-        print_bad_job_line(str(job['id_job']), str(job['start']),
+        try:
+            print_bad_job_line(str(job['id_job']), str(job['start']),
                            job['account'], str(job['id_user']),
                            str(job['state']), job['job_name'])
+        except:
+            pass
 
 
 def print_bad_job_line(job_id, start, account, user_id, state, job_name):
